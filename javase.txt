@@ -1,0 +1,28 @@
+jdk包括jre和开发工具，jre包括jvm和库
+多态(Polymorphism)：就是父类型的引用可以指向子类型的对象。父类指针（引用）指向父类对象则调用父类中定义的函数，如果指向子类对象则调用子类中定义的重写函数。
+不使用多态的话就要针对不同的子对象逐一定义方法。若一个类有很多很多子类，那么代码量是非常庞大的。因此，这时候多态就非常有用了。
+编译看左边：父类必须有该方法；执行看右边：右边什么对象就调谁。父类有子类无则父类，父类无子类有出错，父子都有则重写。即只能调子类重写，向下转型即可调子类
+类中静态函数只能访问静态成员，非静态均可（可用类名调用）
+类中静态变量共享
+重载(Overload) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同
+重写(Override)是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。
+接口里全是抽象方法。接口是不可以被实例化, 但是接口引用可以指向1个实现该接口的对象。接口的最主要的作用是达到统一访问，就是在创建对象的时候用接口创建，【接口名】 【对象名】=new 【实现接口的类】，这样你像用哪个类的对象就可以new哪个对象了，不需要改原来的代码（接口名处）
+throwable包括error（无法处理）和exception。遇到exception默认停止。exception包括编译时（只是可能出现但必须处理）和运行时异常（runtime及子类）
+Arrays类有sort和tostring两个静态方法直接操作数组
+collections有sort和reverse
+集合包括collection和map接口，collection包括list和set接口，list实现类ArrayList和LinkedList，set实现类HashSet和TreeSet，map实现类HashMap
+Iterator是接口，ListIerator特有且不会并发修改异常
+集合一般都重写了tostring
+object的hashcode方法可以重写，应保证只与内容而与地址无关
+hashset唯一性：如果没有哈希值相同的对象就直接存入集合；如果有哈希值相同的对象, 就和哈希值相同的对象逐个进行equals()比较,比较结果为false就存入, true则不存
+list存取顺序一致set不一定，LinkedHashSet按存入顺序唯一，hashset只是唯一，treeset唯一且有序
+记事本打开能看懂就是字符流否则字节流，字节流万能
+文本文件字符流，utf-8三字节，gbk两字节。一次读一个字符或字符数组，可以选择字符编码，默认utf-8。同样有字符缓冲流
+字节流InputStream包括FileInputStream和BufferedInputStream
+字符流Reader包括InputStreamReader(子类FileReader)和BufferedReader
+字节流，字符流（按编码读取转化为字符，把字符解码输出），打印流（不转码），前两个要编码解码
+java线程优先级相同时会随机抢占，所以会导致卖相同票负数票情况
+优先级1-10，高优先级只是几率高一点不是百分百在低的前面
+synchronized代码块锁是一个obj，synchronized方法锁是this，synchronized静态方法锁是方法.class。也可以用lockunlock。用synchronized和wait，notifyall
+方法加synchronized的类是线程安全的
+接口有static final变量，默认是abstract函数必重写，default函数可以重写也可以不重写，static函数只能用接口名调用，private方法只能由方法调用
