@@ -26,3 +26,8 @@ java线程优先级相同时会随机抢占，所以会导致卖相同票负数�
 synchronized代码块锁是一个obj，synchronized方法锁是this，synchronized静态方法锁是方法.class。也可以用lockunlock。用synchronized和wait，notifyall
 方法加synchronized的类是线程安全的
 接口有static final变量，默认是abstract函数必重写，default函数可以重写也可以不重写，static函数只能用接口名调用，private方法只能由方法调用
+函数式接口：只含有一个抽象方法的接口，用于lambda表达式。可作为返回值形参等。如runable，comparator，supplier，consumer，predicate，function
+函数式编程体现于stream流
+类加载：内存中建立class字节码类型对象
+反射：获取class字节码类型对象
+Class类可以获取构造方法，成员
